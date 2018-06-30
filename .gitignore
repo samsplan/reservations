@@ -62,7 +62,3 @@ typings/
 
 # Artefacts
 dist/
-
-# VS Code Files
-.vscode/*
-!.vscode/tasks.json
