@@ -1,0 +1,36 @@
+{
+    "name": "reservations",
+    "version": "0.0.1",
+    "description": "Create Reservations",
+    "main": "index.js",
+    "scripts": {
+        "start": "node dist/server.js",
+        "test": "test",
+        "tsc": "tsc",
+        "lint": "tslint tests/*.ts -t verbose"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/samsplan/reservations.git"
+    },
+    "keywords": [
+        "reservations",
+        "booking",
+        "orders"
+    ],
+    "author": "Webatang",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/samsplan/reservations/issues"
+    },
+    "homepage": "https://github.com/samsplan/reservations#readme",
+    "private": true,
+    "dependencies": {
+        "express": "^4.16.3"
+    },
+    "devDependencies": {
+        "@types/express": "^4.16.0",
+        "tslint": "^5.10.0",
+        "typescript": "^2.9.2"
+    }
+}
