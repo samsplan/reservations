@@ -1,7 +1,6 @@
 # Reservations
 
-[![CircleCI](https://circleci.com/gh/samsplan/reservations.svg?style=svg)](https://circleci.com/gh/samsplan/reservations) 
-[![Maintainability](https://api.codeclimate.com/v1/badges/f890b72a56bb40a4d9fc/maintainability)](https://codeclimate.com/github/samsplan/reservations/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/f890b72a56bb40a4d9fc/test_coverage)](https://codeclimate.com/github/samsplan/reservations/test_coverage)
+[![CircleCI](https://circleci.com/gh/samsplan/reservations.svg?style=svg)](https://circleci.com/gh/samsplan/reservations)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/142c073153a242e6adb432c371b89f2b)](https://www.codacy.com/app/samsplan/reservations?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=samsplan/reservations&amp;utm_campaign=Badge_Grade)
 
 Learning Node and building a reservations app whilst I do!
