@@ -1,10 +1,11 @@
-import { Request, Response } from 'express';
+import { Get, Route, Controller } from 'tsoa';
 
-/**
- * GET /
- * Home page.
- */
-export let index = (req: Request, res: Response) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({ 'message': 'hello world' }));
-};
+@Route('')
+export class HomeController extends Controller {
+    @Get()
+    public index(): Promise<string> {
+        return new Promise<string>((resolve, reject) => {
+            resolve('Hello to another world');
+        });
+    }
+}

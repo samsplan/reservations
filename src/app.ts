@@ -1,7 +1,5 @@
 import express from 'express';
-
-// Controllers (route handlers)
-import * as homeController from './controllers/home';
+import RegisterRoutes from './routes/routes';
 
 // Create Express server
 const app = express();
@@ -10,6 +8,6 @@ const app = express();
 app.set('port', process.env.PORT || 3000);
 
 // Route definitions
-app.get('/', homeController.index);
+RegisterRoutes(app);
 
 export default app;
