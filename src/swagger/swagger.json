@@ -1,0 +1,40 @@
+{
+	"basePath": "",
+	"consumes": [
+		"application/json"
+	],
+	"definitions": {},
+	"info": {
+		"title": "reservations",
+		"version": "0.0.1",
+		"description": "Create Reservations",
+		"license": {
+			"name": "MIT"
+		}
+	},
+	"paths": {
+		"/": {
+			"get": {
+				"operationId": "Index",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"type": "string"
+						}
+					}
+				},
+				"security": [],
+				"parameters": []
+			}
+		}
+	},
+	"produces": [
+		"application/json"
+	],
+	"swagger": "2.0",
+	"securityDefinitions": {}
+}
