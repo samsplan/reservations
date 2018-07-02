@@ -4,10 +4,17 @@
     "description": "Create Reservations",
     "main": "index.js",
     "scripts": {
+        "clean": "rimraf dist/*",
+        "prebuild": "npm run clean",
+        "build": "npm run build:ts && npm run copy:static-assets",
+        "build:ts": "npm run lint:ts && tsc",
         "start": "node dist/server.js",
+        "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch:ts\" \"npm run watch:node\"",
+        "watch:node": "nodemon dist/server.js",
+        "watch:ts": "tsc -w",
         "test": "jest --detectOpenHandles --forceExit --coverage --verbose && cat ./coverage/lcov.info | codacy-coverage",
-        "tsc": "tsc",
-        "lint": "tslint src/*.ts test/*.ts -t verbose",
+        "lint:ts": "tslint -c tslint.json -p tsconfig.json -t verbose",
+        "copy:static-assets": "ts-node build/copyStaticAssets.ts",
         "swagger": "tsoa swagger"
     },
     "repository": {
@@ -34,12 +41,18 @@
     "devDependencies": {
         "@types/express": "^4.16.0",
         "@types/jest": "^23.1.3",
+        "@types/shelljs": "^0.8.0",
         "@types/supertest": "^2.0.4",
         "@types/swagger-ui-express": "^3.0.0",
         "codacy-coverage": "^3.0.0",
+        "concurrently": "^3.6.0",
         "jest": "^23.2.0",
+        "nodemon": "^1.17.5",
+        "rimraf": "^2.6.2",
+        "shelljs": "^0.8.2",
         "supertest": "^3.1.0",
         "ts-jest": "^22.4.6",
+        "ts-node": "^7.0.0",
         "tslint": "^5.10.0",
         "typescript": "^2.9.2"
     }
