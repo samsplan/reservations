@@ -1,0 +1,12 @@
+{
+    "name": "Reservations Service",
+    "script": "./dist/server.js",
+    "merge_logs": true,
+    "max_restarts": 20,
+    "instances": 4,
+    "max_memory_restart": "200M",
+    "env": {
+        "PORT": 80,
+        "NODE_ENV": "production"
+    }
+}
