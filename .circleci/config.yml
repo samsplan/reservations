@@ -22,11 +22,13 @@ jobs:
       - setup_remote_docker:
           version: 17.09.0-ce
           
-      - run: docker version
+      - run: 
+          name: Docker Version
+          command: docker version
 
       - run:
-          name: Packaging $(npm run --silent version)
-          command: docker build --tag webatang/reservations:$(npm run --silent version) --build-arg codacy_token=${CODACY_PROJECT_TOKEN}
+          name: Packaging
+          command: docker build --tag webatang/reservations:$(npm run --silent version) --build-arg codacy_token=${CODACY_PROJECT_TOKEN} .
 
 
 
