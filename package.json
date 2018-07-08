@@ -16,7 +16,8 @@
         "test": "jest --detectOpenHandles --forceExit --coverage --verbose && cat ./coverage/lcov.info | codacy-coverage",
         "lint:ts": "tslint -c tslint.json -p tsconfig.json -t verbose",
         "copy:static-assets": "ts-node build/copyStaticAssets.ts",
-        "swagger": "tsoa swagger"
+        "swagger": "tsoa swagger",
+        "version": "echo ${npm_package_version}"
     },
     "repository": {
         "type": "git",

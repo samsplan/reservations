@@ -1,13 +1,13 @@
 #
 # ---- Base Image ----
 FROM node:10.5-alpine AS base
+ARG codacy_token
+ENV CODACY_PROJECT_TOKEN=${codacy_token}
 RUN apk add --no-cache git
 
 #
 # ---- Dependencies ----
 FROM base AS dependencies
-ARG codacy_token
-ENV CODACY_PROJECT_TOKEN=${codacy_token}
 WORKDIR /app
 COPY package.json package-lock.json ./
 # install node packages
@@ -20,11 +20,12 @@ RUN npm install
 
 #
 # ---- Build Agent ----
-# run linters, build and test
 FROM dependencies AS buildAgent
 COPY . .
 RUN  npm test && npm run build
 
+#
+# ---- Deployable Artefact ----
 FROM keymetrics/pm2:8-alpine
 COPY --from=dependencies /app/prod_node_modules/ /node_modules/
 COPY --from=buildAgent /app/dist/ /dist/
