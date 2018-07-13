@@ -28,17 +28,17 @@ jobs:
                     - node_modules
                 key: v1-dependencies-{{ checksum "package.json" }}
 
+            - run: npm run build
+
             - run: 
                 environment:
                     JEST_JUNIT_OUTPUT: './test-results/jest/results.xml'
-                command: npm run build
-
-            - run: npm test
+                command: npm test
 
             - run: npm prune --production
 
             - store_test_results:
-                path: test-results
+                path: ./test-results
 
 
 
