@@ -62,3 +62,6 @@ typings/
 
 # Artefacts
 dist/
+
+# macOS
+.DS_Store
