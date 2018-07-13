@@ -8,5 +8,11 @@
     },
     "typescript.referencesCodeLens.enabled": true,
     "tslint.ignoreDefinitionFiles": false,
-    "tslint.exclude": "**/node_modules/**/*"
+    "tslint.exclude": "**/node_modules/**/*",
+    "editor.tabSize": 4,
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "editor.autoIndent": false
+    }
 }
